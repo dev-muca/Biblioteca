@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema Bibliotecário</title>
+  <title>Biblioteca - Login</title>
   <script src="https://kit.fontawesome.com/d2f0d6e2e7.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/login.css">
+  <script src="./assets/js/login.js" defer></script>
 </head>
 
 <body>
-  <header>
-    <div class="logo" tabindex="1">
-      <img src="./assets/svg/book.svg" width="32" height="32" alt=""> Logotipo
-    </div>
-    <div class="search">
-      <input type="search" autocomplete="off" placeholder="Pesquise algo por aqui..." name="txtSearch" id="txtSearch"
-        tabindex="2">
-      <button id="btnSearch" tabindex="3">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </div>
-    <div class="menu">
-      <i class="fa-solid fa-house-user" tabindex="4"></i>
-      <i class="fa-solid fa-user" tabindex="5"></i>
-      <i class="fa-solid fa-book" tabindex="6"></i>
-      <div class="imagePerfil" tabindex="7">
-        <img src="./assets/img/perfil/perfil.png" alt="Uma pequena iamgem de perfil do usuário">
+  <main id="login">
+    <aside>
+      <img src="./assets/img/login/background/background2.jpeg"
+        alt="Uma imagem em escala de cinza, apresentando uma prateleira de biblioteca repleta de livros.">
+    </aside>
+    <section>
+      <h1>Biblioteca</h1>
+      <input type="text" class="txtUser normal" name="txtUser" id="txtUser" placeholder="Usuário" autocomplete="off"
+        required>
+      <div class="containerPassword">
+        <input type="password" class="txtPassword" name="txtPassword" id="txtPassword" placeholder="Senha"
+          autocomplete="off" required>
+        <input type="checkbox" id="chkShowPassword">
+        <label for="showPassword" id="lblPassword">
+          <i id="show" class="fa-solid far fa-eye-slash"></i>
+        </label>
       </div>
-    </div>
-  </header>
+      <div class="containerRememberMe">
+        <input type="checkbox" id="chkRememberMe">
+        <label id="lblRememberMe" for="chkRememberMe">lembre de mim</label>
+      </div>
+      <button id="btnLogin">Acessar</button>
+      <p>
+        Não possuí uma conta ainda?
+        <a href="#">Cadastre-se aqui!</a>
+      </p>
+    </section>
+  </main>
+  <main id="signup" class="animation">
+  </main>
 </body>
 
 </html>

@@ -94,6 +94,14 @@ header {
     justify-content: space-between;
     padding: 0px 20px;
   }
+  header .logo {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
   header .search {
     display: none;
   }

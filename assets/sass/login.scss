@@ -14,8 +14,9 @@ body {
   position: relative;
 }
 
-main {
+#login {
   color: color.$txt;
+  /* display: none; */
 
   @media (min-width: 980px) and (max-width: 2560px) {
     position: absolute;
@@ -77,7 +78,11 @@ main {
         border: 1px solid #850f0f;
         outline: 1px solid #850f0f;
         background: #850f0f54;
-        color: #850f0f;
+        color: #fff;
+
+        &::placeholder {
+          color: #fff;
+        }
       }
 
       .containerPassword {
@@ -311,5 +316,34 @@ main {
         border-bottom: 1px solid color.$txt;
       }
     }
+  } /* End of Mobile View */
+}
+
+#signup {
+  display: none;
+  width: 450px;
+  height: 850px;
+  background-color: #850f0f;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.animation {
+  animation: 0.8s switchScreen;
+}
+
+@keyframes switchScreen {
+  0% {
+    //from --- 0%
+    width: 950px;
+    height: 400px;
   }
-} /* End of Mobile View */
+
+  100% {
+    //to --- 100%
+    width: 450px;
+    height: 850px;
+  }
+}

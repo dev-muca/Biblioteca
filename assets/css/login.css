@@ -15,12 +15,14 @@ body {
   position: relative;
 }
 
-main {
+#login {
   color: #ffffff;
+  /* display: none; */
   /* End of Desktop View */
+  /* End of Mobile View */
 }
 @media (min-width: 980px) and (max-width: 2560px) {
-  main {
+  #login {
     position: absolute;
     top: 50vh;
     left: 50vw;
@@ -33,12 +35,12 @@ main {
     border-radius: 5px;
     transform: translate(-50%, -50%);
   }
-  main img {
+  #login img {
     height: 100%;
     border-radius: 5px 0 0 5px;
     border-right: 1px solid #a4a5a8;
   }
-  main section {
+  #login section {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -46,14 +48,14 @@ main {
     align-items: center;
     position: relative;
   }
-  main section h1 {
+  #login section h1 {
     margin: 30px 0px 20px 0px;
     font-family: "Dancing Script";
     font-size: 60px;
     user-select: none;
   }
-  main section .txtUser,
-main section .txtPassword {
+  #login section .txtUser,
+#login section .txtPassword {
     outline: none;
     margin: 10px 0px;
     height: 30px;
@@ -67,23 +69,26 @@ main section .txtPassword {
     font-family: Arial;
     transition: 0.1s;
   }
-  main section .txtUser:focus,
-main section .txtPassword:focus {
+  #login section .txtUser:focus,
+#login section .txtPassword:focus {
     outline: 2px solid #ffffffc9;
   }
-  main section .error {
+  #login section .error {
     border: 1px solid #850f0f;
     outline: 1px solid #850f0f;
     background: #850f0f54;
-    color: #850f0f;
+    color: #fff;
   }
-  main section .containerPassword {
+  #login section .error::placeholder {
+    color: #fff;
+  }
+  #login section .containerPassword {
     position: relative;
   }
-  main section .containerPassword #chkShowPassword {
+  #login section .containerPassword #chkShowPassword {
     display: none;
   }
-  main section .containerPassword #lblPassword {
+  #login section .containerPassword #lblPassword {
     position: absolute;
     top: 50%;
     right: 5px;
@@ -97,15 +102,15 @@ main section .txtPassword:focus {
     align-items: center;
     cursor: pointer;
   }
-  main section .containerPassword #lblPassword i {
+  #login section .containerPassword #lblPassword i {
     cursor: pointer;
     color: #a4a5a8;
     transition: 0.2s color;
   }
-  main section .containerPassword #lblPassword i:hover {
+  #login section .containerPassword #lblPassword i:hover {
     color: #ffffff;
   }
-  main section .containerRememberMe {
+  #login section .containerRememberMe {
     position: relative;
     width: 200px;
     text-align: right;
@@ -116,22 +121,22 @@ main section .txtPassword:focus {
     user-select: none;
     /* opacity: 0.3; */
   }
-  main section .containerRememberMe input:checked ~ label,
-main section .containerRememberMe input {
+  #login section .containerRememberMe input:checked ~ label,
+#login section .containerRememberMe input {
     opacity: 1;
     opacity: 1;
   }
-  main section .containerRememberMe label,
-main section .containerRememberMe input {
+  #login section .containerRememberMe label,
+#login section .containerRememberMe input {
     opacity: 0.2;
     cursor: pointer;
     transition: 0.1s opacity;
   }
-  main section .containerRememberMe label:hover,
-main section .containerRememberMe input:hover {
+  #login section .containerRememberMe label:hover,
+#login section .containerRememberMe input:hover {
     opacity: 1;
   }
-  main section button {
+  #login section button {
     width: 80px;
     height: 30px;
     outline: none;
@@ -145,32 +150,32 @@ main section .containerRememberMe input:hover {
     transition: 0.1s border;
     cursor: pointer;
   }
-  main section button:hover {
+  #login section button:hover {
     border: 2px solid #ffffffc9;
   }
-  main section button:active {
+  #login section button:active {
     background: #ffffff;
     color: #000000;
   }
-  main section p {
+  #login section p {
     margin: auto 0px;
     font-size: 12px;
   }
-  main section p a {
+  #login section p a {
     text-decoration: none;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
   }
 }
 @media (max-width: 979px) {
-  main {
+  #login {
     width: 95%;
     background: #292a2d;
     box-shadow: 3px 3px 10px #00000050;
     border-radius: 5px;
     margin: 25px auto;
   }
-  main aside {
+  #login aside {
     height: 150px;
     background: yellow;
     overflow: hidden;
@@ -178,7 +183,7 @@ main section .containerRememberMe input:hover {
     border-radius: 5px 5px 0 0;
     border-bottom: 1px solid #3f4042;
   }
-  main section {
+  #login section {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -186,14 +191,14 @@ main section .containerRememberMe input:hover {
     align-items: center;
     position: relative;
   }
-  main section h1 {
+  #login section h1 {
     margin: 50px auto 30px auto;
     font-family: "Dancing Script";
     font-size: 60px;
     user-select: none;
   }
-  main section .txtUser,
-main section .txtPassword {
+  #login section .txtUser,
+#login section .txtPassword {
     outline: none;
     margin: 10px 0px;
     height: 40px;
@@ -206,20 +211,20 @@ main section .txtPassword {
     transition: 0.1s outline;
     font-family: Arial;
   }
-  main section .txtUser:focus,
-main section .txtPassword:focus {
+  #login section .txtUser:focus,
+#login section .txtPassword:focus {
     outline: 2px solid #ffffffc9;
   }
-  main section #showPassword {
+  #login section #showPassword {
     display: none;
   }
-  main section .containerPassword {
+  #login section .containerPassword {
     position: relative;
   }
-  main section .containerPassword #chkShowPassword {
+  #login section .containerPassword #chkShowPassword {
     display: none;
   }
-  main section .containerPassword #lblPassword {
+  #login section .containerPassword #lblPassword {
     position: absolute;
     top: 50%;
     right: 5px;
@@ -233,15 +238,15 @@ main section .txtPassword:focus {
     align-items: center;
     cursor: pointer;
   }
-  main section .containerPassword #lblPassword i {
+  #login section .containerPassword #lblPassword i {
     cursor: pointer;
     color: #a4a5a8;
     transition: 0.2s color;
   }
-  main section .containerPassword #lblPassword i:hover {
+  #login section .containerPassword #lblPassword i:hover {
     color: #ffffff;
   }
-  main section .containerRememberMe {
+  #login section .containerRememberMe {
     position: relative;
     width: 250px;
     text-align: right;
@@ -251,7 +256,7 @@ main section .txtPassword:focus {
     cursor: pointer;
     user-select: none;
   }
-  main button {
+  #login button {
     width: 150px;
     height: 50px;
     outline: none;
@@ -266,24 +271,48 @@ main section .txtPassword:focus {
     transition: 0.1s border;
     cursor: pointer;
   }
-  main button:hover {
+  #login button:hover {
     border: 2px solid #ffffffc9;
   }
-  main button:active {
+  #login button:active {
     background: #ffffff;
     color: #000000;
   }
-  main p {
+  #login p {
     margin: 30px auto 50px auto;
     font-size: 12px;
   }
-  main p a {
+  #login p a {
     text-decoration: none;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
   }
 }
 
-/* End of Mobile View */
+#signup {
+  display: none;
+  width: 450px;
+  height: 850px;
+  background-color: #850f0f;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.animation {
+  animation: 0.8s switchScreen;
+}
+
+@keyframes switchScreen {
+  0% {
+    width: 950px;
+    height: 400px;
+  }
+  100% {
+    width: 450px;
+    height: 850px;
+  }
+}
 
 /*# sourceMappingURL=login.css.map */
