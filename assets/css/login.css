@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hurricane&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-weight: lighter;
+}
+
+body {
+  background: #202124;
+  position: relative;
+}
+
+main {
+  color: #ffffff;
+  /* End of Desktop View */
+}
+@media (min-width: 980px) and (max-width: 2560px) {
+  main {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 950px;
+    height: 400px;
+    background: #292a2d;
+    box-shadow: 3px 3px 10px #00000050;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+  }
+  main img {
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid #a4a5a8;
+  }
+  main section {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  main section h1 {
+    margin: 30px 0px 20px 0px;
+    font-family: "Dancing Script";
+    font-size: 60px;
+    user-select: none;
+  }
+  main section .txtUser,
+main section .txtPassword {
+    outline: none;
+    margin: 10px 0px;
+    height: 30px;
+    width: 200px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: #202123;
+    border: 1px solid #3f4042;
+    color: #ffffff;
+    transition: 0.1s outline;
+    font-family: Arial;
+    transition: 0.1s;
+  }
+  main section .txtUser:focus,
+main section .txtPassword:focus {
+    outline: 2px solid #ffffffc9;
+  }
+  main section .error {
+    border: 1px solid #850f0f;
+    outline: 1px solid #850f0f;
+    background: #850f0f54;
+    color: #850f0f;
+  }
+  main section .containerPassword {
+    position: relative;
+  }
+  main section .containerPassword #chkShowPassword {
+    display: none;
+  }
+  main section .containerPassword #lblPassword {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 22px;
+    border-left: 1px solid #3f4042;
+    padding-left: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  main section .containerPassword #lblPassword i {
+    cursor: pointer;
+    color: #a4a5a8;
+    transition: 0.2s color;
+  }
+  main section .containerPassword #lblPassword i:hover {
+    color: #ffffff;
+  }
+  main section .containerRememberMe {
+    position: relative;
+    width: 200px;
+    text-align: right;
+    font-size: 14px;
+    margin: 0px 0px 10px 0px;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    /* opacity: 0.3; */
+  }
+  main section .containerRememberMe input:checked ~ label,
+main section .containerRememberMe input {
+    opacity: 1;
+    opacity: 1;
+  }
+  main section .containerRememberMe label,
+main section .containerRememberMe input {
+    opacity: 0.2;
+    cursor: pointer;
+    transition: 0.1s opacity;
+  }
+  main section .containerRememberMe label:hover,
+main section .containerRememberMe input:hover {
+    opacity: 1;
+  }
+  main section button {
+    width: 80px;
+    height: 30px;
+    outline: none;
+    margin: 20px 0px;
+    text-transform: uppercase;
+    border: 1px solid #3f4042;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #00000050;
+    background-color: #292a2d;
+    color: #ffffff;
+    transition: 0.1s border;
+    cursor: pointer;
+  }
+  main section button:hover {
+    border: 2px solid #ffffffc9;
+  }
+  main section button:active {
+    background: #ffffff;
+    color: #000000;
+  }
+  main section p {
+    margin: auto 0px;
+    font-size: 12px;
+  }
+  main section p a {
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+}
+@media (max-width: 979px) {
+  main {
+    width: 95%;
+    background: #292a2d;
+    box-shadow: 3px 3px 10px #00000050;
+    border-radius: 5px;
+    margin: 25px auto;
+  }
+  main aside {
+    height: 150px;
+    background: yellow;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #3f4042;
+  }
+  main section {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  main section h1 {
+    margin: 50px auto 30px auto;
+    font-family: "Dancing Script";
+    font-size: 60px;
+    user-select: none;
+  }
+  main section .txtUser,
+main section .txtPassword {
+    outline: none;
+    margin: 10px 0px;
+    height: 40px;
+    width: 250px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: #202123;
+    border: 1px solid #3f4042;
+    color: #ffffff;
+    transition: 0.1s outline;
+    font-family: Arial;
+  }
+  main section .txtUser:focus,
+main section .txtPassword:focus {
+    outline: 2px solid #ffffffc9;
+  }
+  main section #showPassword {
+    display: none;
+  }
+  main section .containerPassword {
+    position: relative;
+  }
+  main section .containerPassword #chkShowPassword {
+    display: none;
+  }
+  main section .containerPassword #lblPassword {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 22px;
+    border-left: 1px solid #3f4042;
+    padding-left: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  main section .containerPassword #lblPassword i {
+    cursor: pointer;
+    color: #a4a5a8;
+    transition: 0.2s color;
+  }
+  main section .containerPassword #lblPassword i:hover {
+    color: #ffffff;
+  }
+  main section .containerRememberMe {
+    position: relative;
+    width: 250px;
+    text-align: right;
+    font-size: 14px;
+    margin: 0px 0px 10px 0px;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  main button {
+    width: 150px;
+    height: 50px;
+    outline: none;
+    margin: 60px 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #3f4042;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #00000050;
+    background-color: #292a2d;
+    color: #ffffff;
+    transition: 0.1s border;
+    cursor: pointer;
+  }
+  main button:hover {
+    border: 2px solid #ffffffc9;
+  }
+  main button:active {
+    background: #ffffff;
+    color: #000000;
+  }
+  main p {
+    margin: 30px auto 50px auto;
+    font-size: 12px;
+  }
+  main p a {
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+}
+
+/* End of Mobile View */
+
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca - Login</title>
+  <script src="https://kit.fontawesome.com/d2f0d6e2e7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/login.css">
+  <script src="./assets/js/login.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <aside>
+      <img src="./assets/img/login/background/background2.jpeg"
+        alt="Uma imagem em escala de cinza, apresentando uma prateleira de biblioteca repleta de livros.">
+    </aside>
+    <section>
+      <h1>Biblioteca</h1>
+      <input type="text" class="txtUser normal" name="txtUser" id="txtUser" placeholder="Usuário" autocomplete="off"
+        required>
+      <div class="containerPassword">
+        <input type="password" class="txtPassword" name="txtPassword" id="txtPassword" placeholder="Senha"
+          autocomplete="off" required>
+        <input type="checkbox" id="chkShowPassword">
+        <label for="showPassword" id="lblPassword">
+          <i id="show" class="fa-solid fa-eye"></i>
+        </label>
+      </div>
+      <div class="containerRememberMe">
+        <input type="checkbox" id="chkRememberMe">
+        <label id="lblRememberMe" for="chkRememberMe">Lembrar de mim</label>
+      </div>
+      <button id="btnLogin">Acessar</button>
+      <p>
+        Não possuí uma conta ainda?
+        <a href="#">Cadastre-se aqui!</a>
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>

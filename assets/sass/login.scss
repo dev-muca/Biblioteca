@@ -1,0 +1,315 @@
+@use "./color";
+@use "./font";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-weight: lighter;
+}
+
+body {
+  background: color.$bodyBg;
+  position: relative;
+}
+
+main {
+  color: color.$txt;
+
+  @media (min-width: 980px) and (max-width: 2560px) {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+
+    display: flex;
+    flex-flow: row nowrap;
+    width: 950px;
+    height: 400px;
+    background: color.$mainBg;
+    box-shadow: 3px 3px 10px color.$shadow;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+
+    img {
+      height: 100%;
+      border-radius: 5px 0 0 5px;
+      border-right: 1px solid color.$item;
+    }
+
+    section {
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      h1 {
+        margin: 30px 0px 20px 0px;
+        font-family: "Dancing Script";
+        font-size: 60px;
+        user-select: none;
+      }
+
+      .txtUser,
+      .txtPassword {
+        outline: none;
+        margin: 10px 0px;
+        height: 30px;
+        width: 200px;
+        padding: 2px 7px;
+        border-radius: 5px;
+        background: color.$bgInput;
+        border: 1px solid color.$border;
+        color: color.$txt;
+        transition: 0.1s outline;
+        font-family: Arial;
+        transition: 0.1s;
+
+        &:focus {
+          outline: 2px solid color.$outline;
+        }
+      }
+
+      //Classes de manipulação
+      .error {
+        border: 1px solid #850f0f;
+        outline: 1px solid #850f0f;
+        background: #850f0f54;
+        color: #850f0f;
+      }
+
+      .containerPassword {
+        position: relative;
+
+        #chkShowPassword {
+          display: none;
+        }
+
+        #lblPassword {
+          position: absolute;
+          top: 50%;
+          right: 5px;
+          transform: translateY(-50%);
+          width: 30px;
+          height: 22px;
+          border-left: 1px solid color.$border;
+          padding-left: 2px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          i {
+            cursor: pointer;
+            color: color.$item;
+            transition: 0.2s color;
+            &:hover {
+              color: color.$txt;
+            }
+          }
+        }
+      }
+
+      .containerRememberMe {
+        position: relative;
+        width: 200px;
+        text-align: right;
+        font-size: 14px;
+        margin: 0px 0px 10px 0px;
+        gap: 10px;
+        cursor: pointer;
+        user-select: none;
+        /* opacity: 0.3; */
+
+        input:checked ~ label,
+        input {
+          opacity: 1;
+          opacity: 1;
+        }
+
+        label,
+        input {
+          opacity: 0.2;
+          cursor: pointer;
+          transition: 0.1s opacity;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      button {
+        width: 80px;
+        height: 30px;
+        outline: none;
+        margin: 20px 0px;
+        text-transform: uppercase;
+        border: 1px solid color.$border;
+        border-radius: 5px;
+        box-shadow: 0px 2px 2px color.$shadow;
+        background-color: color.$bgButton;
+        color: color.$txt;
+        transition: 0.1s border;
+
+        cursor: pointer;
+
+        &:hover {
+          border: 2px solid color.$outline;
+        }
+
+        &:active {
+          background: color.$txt;
+          color: color.$txtBlack;
+        }
+      }
+
+      p {
+        margin: auto 0px;
+        font-size: 12px;
+        a {
+          text-decoration: none;
+          color: color.$txt;
+          border-bottom: 1px solid color.$txt;
+        }
+      }
+    }
+  } /* End of Desktop View */
+
+  @media (max-width: 979px) {
+    width: 95%;
+    background: color.$mainBg;
+    box-shadow: 3px 3px 10px color.$shadow;
+    border-radius: 5px;
+    margin: 25px auto;
+
+    aside {
+      height: 150px;
+      background: yellow;
+      overflow: hidden;
+      position: relative;
+      border-radius: 5px 5px 0 0;
+      border-bottom: 1px solid color.$border;
+    }
+
+    section {
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      h1 {
+        margin: 50px auto 30px auto;
+        font-family: "Dancing Script";
+        font-size: 60px;
+        user-select: none;
+      }
+
+      .txtUser,
+      .txtPassword {
+        outline: none;
+        margin: 10px 0px;
+        height: 40px;
+        width: 250px;
+        padding: 2px 7px;
+        border-radius: 5px;
+        background: color.$bgInput;
+        border: 1px solid color.$border;
+        color: color.$txt;
+        transition: 0.1s outline;
+        font-family: Arial;
+
+        &:focus {
+          outline: 2px solid color.$outline;
+        }
+      }
+
+      #showPassword {
+        display: none;
+      }
+
+      .containerPassword {
+        position: relative;
+
+        #chkShowPassword {
+          display: none;
+        }
+
+        #lblPassword {
+          position: absolute;
+          top: 50%;
+          right: 5px;
+          transform: translateY(-50%);
+          width: 30px;
+          height: 22px;
+          border-left: 1px solid color.$border;
+          padding-left: 2px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          i {
+            cursor: pointer;
+            color: color.$item;
+            transition: 0.2s color;
+            &:hover {
+              color: color.$txt;
+            }
+          }
+        }
+      }
+
+      .containerRememberMe {
+        position: relative;
+        width: 250px;
+        text-align: right;
+        font-size: 14px;
+        margin: 0px 0px 10px 0px;
+        gap: 10px;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+
+    button {
+      width: 150px;
+      height: 50px;
+      outline: none;
+      margin: 60px 0px;
+      text-transform: uppercase;
+      font-weight: bold;
+      border: 1px solid color.$border;
+      border-radius: 5px;
+      box-shadow: 0px 2px 2px color.$shadow;
+      background-color: color.$bgButton;
+      color: color.$txt;
+      transition: 0.1s border;
+
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid color.$outline;
+      }
+
+      &:active {
+        background: color.$txt;
+        color: color.$txtBlack;
+      }
+    }
+
+    p {
+      margin: 30px auto 50px auto;
+      font-size: 12px;
+      a {
+        text-decoration: none;
+        color: color.$txt;
+        border-bottom: 1px solid color.$txt;
+      }
+    }
+  }
+} /* End of Mobile View */

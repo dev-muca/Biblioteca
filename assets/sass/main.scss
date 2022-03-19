@@ -1,0 +1,16 @@
+@use "./color";
+@use "./font";
+@use "./navbar";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-weight: lighter;
+}
+
+body {
+  background: color.$bodyBg;
+  position: relative;
+}
