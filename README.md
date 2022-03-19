@@ -27,6 +27,8 @@ O projeto está ainda em fase de desenvolvimento, e estou caminhando para desenv
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" />
 </p>
 
+<p>Você pode conferir como o projeto está atravês <a href="https://biblioteca-online.netlify.app/"> deste link!</a></p>
+
 #
 
 ## 😄 Obrigado pela presença<br>
