@@ -7,6 +7,7 @@
   margin: 5px 10px;
   cursor: pointer;
   user-select: none;
+  width: fit-content;
 }
 .toggleSwitch:hover > .newCheckbox {
   outline: 1px solid #ffffff;
@@ -67,7 +68,7 @@
   transition: 0.1s border;
   cursor: pointer;
 }
-.access:hover {
+.access:hover, .access:focus {
   border: 2px solid #ffffffc9;
 }
 .access:active {

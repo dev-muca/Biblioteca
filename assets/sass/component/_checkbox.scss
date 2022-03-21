@@ -5,6 +5,7 @@
   margin: 5px 10px;
   cursor: pointer;
   user-select: none;
+  width: fit-content;
 
   &:hover > .newCheckbox {
     outline: 1px solid color.$txt;

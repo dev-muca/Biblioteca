@@ -23,33 +23,28 @@
     <section>
       <h1>Biblioteca</h1>
       <input type="text" class="txtUser normal" name="txtUser" id="txtUser" placeholder="Usuário" autocomplete="off"
-        required>
+        tabindex="1">
 
       <div class="containerPassword">
         <input type="password" class="txtPassword" name="txtPassword" id="txtPassword" placeholder="Senha"
-          autocomplete="off" required>
+          autocomplete="off" tabindex="2">
 
         <label class="icon">
           <i id="show" class="fa-solid far fa-eye-slash"></i>
         </label>
       </div>
 
-      <!-- <div class="containerRememberMe">
-        <input type="checkbox" id="chkRememberMe">
-        <label id="lblRememberMe" for="chkRememberMe">lembre de mim</label>
-      </div> -->
-
-      <label class="label toggleSwitch">
+      <label class="label toggleSwitch" tabindex="5">
         <input type="checkbox" id="checkbox">
         <div class="newCheckbox"></div>
         <div class="textCheckbox">lembrar de mim</div>
       </label>
 
-      <button id="btnLogin" class="access">Acessar</button>
+      <button id="btnLogin" class="access" tabindex="3">Acessar</button>
 
       <p>
         Não possuí uma conta ainda?
-        <a href="#">Cadastre-se aqui!</a>
+        <a href="#" tabindex="4">Cadastre-se aqui!</a>
       </p>
 
     </section>

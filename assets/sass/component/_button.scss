@@ -15,7 +15,8 @@
 
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border: 2px solid color.$outline;
   }
 
