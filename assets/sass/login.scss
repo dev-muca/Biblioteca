@@ -61,20 +61,8 @@ body {
         margin: 30px;
       }
 
-      .lblCheckbox {
+      .label {
         padding-right: 50px;
-      }
-
-      //Classes de manipulação
-      .error {
-        border: 1px solid #850f0f;
-        outline: 1px solid #850f0f;
-        background: #850f0f54;
-        color: #fff;
-
-        &::placeholder {
-          color: #fff;
-        }
       }
 
       .containerPassword {

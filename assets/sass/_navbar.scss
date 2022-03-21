@@ -10,6 +10,8 @@ header {
   border-bottom: 1px solid color.$border;
   color: color.$txt;
   font-size: 18px;
+  position: fixed;
+  width: 100%;
 
   @media (min-width: 769px) and (max-width: 2560px) {
     justify-content: space-around;
@@ -82,14 +84,16 @@ header {
         }
       }
 
-      img {
-        border-radius: 100%;
-        cursor: pointer;
-        margin-top: 7px;
-        width: 25px;
-        transition: 0.2s box-shadow;
-        &:hover {
-          box-shadow: 0px 0px 5px color.$txt;
+      .imagePerfil {
+        img {
+          border-radius: 100%;
+          cursor: pointer;
+          margin-top: 7px;
+          width: 25px;
+          transition: 0.2s box-shadow;
+          &:hover {
+            box-shadow: 0px 0px 5px color.$txt;
+          }
         }
       }
     }

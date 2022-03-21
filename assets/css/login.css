@@ -2,35 +2,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hurricane&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
-.lblCheckbox {
+.toggleSwitch {
   position: relative;
   margin: 5px 10px;
   cursor: pointer;
   user-select: none;
 }
-.lblCheckbox:hover > .newCheckbox {
+.toggleSwitch:hover > .newCheckbox {
   outline: 1px solid #ffffff;
 }
-.lblCheckbox #checkbox {
+.toggleSwitch #checkbox {
   display: none;
 }
-.lblCheckbox #checkbox:checked ~ .newCheckbox::after {
+.toggleSwitch #checkbox:checked ~ .newCheckbox::after {
   position: absolute;
   top: 3px;
   left: 19px;
+  background: #00ff00;
 }
-.lblCheckbox .newCheckbox {
+.toggleSwitch #checkbox:checked ~ .newCheckbox {
+  border: 1px solid #00ff00;
+}
+.toggleSwitch .newCheckbox {
   width: 35px;
   height: 18px;
   background: #202123;
   border-radius: 50px;
   border: 1px solid #3f4042;
-  transition: 1s;
+  transition: 0.3s;
 }
-.lblCheckbox .newCheckbox:hover {
+.toggleSwitch .newCheckbox:hover {
   outline: 1px solid #ffffff;
 }
-.lblCheckbox .newCheckbox::after {
+.toggleSwitch .newCheckbox::after {
   content: "";
   width: 12px;
   height: 12px;
@@ -41,7 +45,7 @@
   border-radius: 100%;
   transition: 0.3s left;
 }
-.lblCheckbox .textCheckbox {
+.toggleSwitch .textCheckbox {
   position: absolute;
   top: 1px;
   left: 40px;
@@ -49,7 +53,7 @@
   font-size: 14px;
 }
 
-button {
+.access {
   width: 200px;
   height: 30px;
   outline: none;
@@ -63,10 +67,10 @@ button {
   transition: 0.1s border;
   cursor: pointer;
 }
-button:hover {
+.access:hover {
   border: 2px solid #ffffffc9;
 }
-button:active {
+.access:active {
   background: #ffffff;
   color: #000000;
 }
@@ -147,17 +151,8 @@ body {
   .login section button {
     margin: 30px;
   }
-  .login section .lblCheckbox {
+  .login section .label {
     padding-right: 50px;
-  }
-  .login section .error {
-    border: 1px solid #850f0f;
-    outline: 1px solid #850f0f;
-    background: #850f0f54;
-    color: #fff;
-  }
-  .login section .error::placeholder {
-    color: #fff;
   }
   .login section .containerPassword {
     position: relative;

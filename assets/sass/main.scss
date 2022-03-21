@@ -1,6 +1,8 @@
 @use "./color";
 @use "./font";
 @use "./navbar";
+@use "./component/checkbox";
+@use "./component/textbox";
 
 * {
   padding: 0;
@@ -13,4 +15,5 @@
 body {
   background: color.$background;
   position: relative;
+  height: 250vh;
 }
