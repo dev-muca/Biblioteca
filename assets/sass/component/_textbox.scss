@@ -1,0 +1,22 @@
+@use "../color";
+
+input[type="text"],
+input[type="password"] {
+  outline: none;
+  margin: 10px 0px;
+  height: 30px;
+  width: 200px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: color.$bgInput;
+  border: 1px solid color.$border;
+  color: color.$txt;
+  transition: 0.1s outline;
+  font-family: Arial;
+  font-weight: normal;
+  transition: 0.1s;
+
+  &:focus {
+    outline: 2px solid color.$outline;
+  }
+}

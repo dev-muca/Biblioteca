@@ -2,27 +2,118 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hurricane&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+.lblCheckbox {
+  position: relative;
+  margin: 5px 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.lblCheckbox:hover > .newCheckbox {
+  outline: 1px solid #ffffff;
+}
+.lblCheckbox #checkbox {
+  display: none;
+}
+.lblCheckbox #checkbox:checked ~ .newCheckbox::after {
+  position: absolute;
+  top: 3px;
+  left: 19px;
+}
+.lblCheckbox .newCheckbox {
+  width: 35px;
+  height: 18px;
+  background: #202123;
+  border-radius: 50px;
+  border: 1px solid #3f4042;
+  transition: 1s;
+}
+.lblCheckbox .newCheckbox:hover {
+  outline: 1px solid #ffffff;
+}
+.lblCheckbox .newCheckbox::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: #ffffff;
+  border-radius: 100%;
+  transition: 0.3s left;
+}
+.lblCheckbox .textCheckbox {
+  position: absolute;
+  top: 1px;
+  left: 40px;
+  width: max-content;
+  font-size: 14px;
+}
+
+button {
+  width: 200px;
+  height: 30px;
+  outline: none;
+  margin: 10px;
+  text-transform: uppercase;
+  border: 1px solid #3f4042;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px #00000050;
+  background-color: #292a2d;
+  color: #ffffff;
+  transition: 0.1s border;
+  cursor: pointer;
+}
+button:hover {
+  border: 2px solid #ffffffc9;
+}
+button:active {
+  background: #ffffff;
+  color: #000000;
+}
+
+input[type=text],
+input[type=password] {
+  outline: none;
+  margin: 10px 0px;
+  height: 30px;
+  width: 200px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #202123;
+  border: 1px solid #3f4042;
+  color: #ffffff;
+  transition: 0.1s outline;
+  font-family: Arial;
+  font-weight: normal;
+  transition: 0.1s;
+}
+input[type=text]:focus,
+input[type=password]:focus {
+  outline: 2px solid #ffffffc9;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto";
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 body {
-  background: #202124;
+  background-color: #2c2d31;
   position: relative;
 }
 
-#login {
+.login {
   color: #ffffff;
+  box-shadow: 5px 5px 10px #00000050;
   /* display: none; */
   /* End of Desktop View */
   /* End of Mobile View */
 }
 @media (min-width: 980px) and (max-width: 2560px) {
-  #login {
+  .login {
     position: absolute;
     top: 50vh;
     left: 50vw;
@@ -31,16 +122,15 @@ body {
     width: 950px;
     height: 400px;
     background: #292a2d;
-    box-shadow: 3px 3px 10px #00000050;
     border-radius: 5px;
     transform: translate(-50%, -50%);
   }
-  #login img {
+  .login img {
     height: 100%;
     border-radius: 5px 0 0 5px;
-    border-right: 1px solid #a4a5a8;
+    border-right: 1px solid #b3b3b3;
   }
-  #login section {
+  .login section {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -48,47 +138,31 @@ body {
     align-items: center;
     position: relative;
   }
-  #login section h1 {
+  .login section h1 {
     margin: 30px 0px 20px 0px;
     font-family: "Dancing Script";
     font-size: 60px;
     user-select: none;
   }
-  #login section .txtUser,
-#login section .txtPassword {
-    outline: none;
-    margin: 10px 0px;
-    height: 30px;
-    width: 200px;
-    padding: 2px 7px;
-    border-radius: 5px;
-    background: #202123;
-    border: 1px solid #3f4042;
-    color: #ffffff;
-    transition: 0.1s outline;
-    font-family: Arial;
-    transition: 0.1s;
+  .login section button {
+    margin: 30px;
   }
-  #login section .txtUser:focus,
-#login section .txtPassword:focus {
-    outline: 2px solid #ffffffc9;
+  .login section .lblCheckbox {
+    padding-right: 50px;
   }
-  #login section .error {
+  .login section .error {
     border: 1px solid #850f0f;
     outline: 1px solid #850f0f;
     background: #850f0f54;
     color: #fff;
   }
-  #login section .error::placeholder {
+  .login section .error::placeholder {
     color: #fff;
   }
-  #login section .containerPassword {
+  .login section .containerPassword {
     position: relative;
   }
-  #login section .containerPassword #chkShowPassword {
-    display: none;
-  }
-  #login section .containerPassword #lblPassword {
+  .login section .containerPassword .icon {
     position: absolute;
     top: 50%;
     right: 5px;
@@ -102,15 +176,15 @@ body {
     align-items: center;
     cursor: pointer;
   }
-  #login section .containerPassword #lblPassword i {
+  .login section .containerPassword .icon i {
     cursor: pointer;
-    color: #a4a5a8;
+    color: #b3b3b3;
     transition: 0.2s color;
   }
-  #login section .containerPassword #lblPassword i:hover {
+  .login section .containerPassword .icon i:hover {
     color: #ffffff;
   }
-  #login section .containerRememberMe {
+  .login section .containerRememberMe {
     position: relative;
     width: 200px;
     text-align: right;
@@ -121,69 +195,46 @@ body {
     user-select: none;
     /* opacity: 0.3; */
   }
-  #login section .containerRememberMe input:checked ~ label,
-#login section .containerRememberMe input {
+  .login section .containerRememberMe input:checked ~ label,
+.login section .containerRememberMe input {
     opacity: 1;
     opacity: 1;
   }
-  #login section .containerRememberMe label,
-#login section .containerRememberMe input {
+  .login section .containerRememberMe label,
+.login section .containerRememberMe input {
     opacity: 0.2;
     cursor: pointer;
     transition: 0.1s opacity;
   }
-  #login section .containerRememberMe label:hover,
-#login section .containerRememberMe input:hover {
+  .login section .containerRememberMe label:hover,
+.login section .containerRememberMe input:hover {
     opacity: 1;
   }
-  #login section button {
-    width: 200px;
-    height: 30px;
-    outline: none;
-    margin: 20px 0px;
-    text-transform: uppercase;
-    border: 1px solid #3f4042;
-    border-radius: 5px;
-    box-shadow: 0px 2px 2px #00000050;
-    background-color: #292a2d;
-    color: #ffffff;
-    transition: 0.1s border;
-    cursor: pointer;
-  }
-  #login section button:hover {
-    border: 2px solid #ffffffc9;
-  }
-  #login section button:active {
-    background: #ffffff;
-    color: #000000;
-  }
-  #login section p {
+  .login section p {
     margin: auto 0px;
     font-size: 12px;
   }
-  #login section p a {
+  .login section p a {
     text-decoration: none;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
   }
 }
 @media (max-width: 979px) {
-  #login {
+  .login {
     width: 95%;
     background: #292a2d;
-    box-shadow: 3px 3px 10px #00000050;
     border-radius: 5px;
     margin: 25px auto;
   }
-  #login aside {
+  .login aside {
     height: 150px;
-    background: yellow;
     overflow: hidden;
     position: relative;
     border-radius: 5px 5px 0 0;
     border-bottom: 1px solid #3f4042;
   }
-  #login section {
+  .login section {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -191,40 +242,16 @@ body {
     align-items: center;
     position: relative;
   }
-  #login section h1 {
+  .login section h1 {
     margin: 50px auto 30px auto;
     font-family: "Dancing Script";
     font-size: 60px;
     user-select: none;
   }
-  #login section .txtUser,
-#login section .txtPassword {
-    outline: none;
-    margin: 10px 0px;
-    height: 40px;
-    width: 250px;
-    padding: 2px 7px;
-    border-radius: 5px;
-    background: #202123;
-    border: 1px solid #3f4042;
-    color: #ffffff;
-    transition: 0.1s outline;
-    font-family: Arial;
-  }
-  #login section .txtUser:focus,
-#login section .txtPassword:focus {
-    outline: 2px solid #ffffffc9;
-  }
-  #login section #showPassword {
-    display: none;
-  }
-  #login section .containerPassword {
+  .login section .containerPassword {
     position: relative;
   }
-  #login section .containerPassword #chkShowPassword {
-    display: none;
-  }
-  #login section .containerPassword #lblPassword {
+  .login section .containerPassword .icon {
     position: absolute;
     top: 50%;
     right: 5px;
@@ -238,80 +265,32 @@ body {
     align-items: center;
     cursor: pointer;
   }
-  #login section .containerPassword #lblPassword i {
+  .login section .containerPassword .icon i {
     cursor: pointer;
-    color: #a4a5a8;
+    color: #b3b3b3;
     transition: 0.2s color;
   }
-  #login section .containerPassword #lblPassword i:hover {
+  .login section .containerPassword .icon i:hover {
     color: #ffffff;
   }
-  #login section .containerRememberMe {
-    position: relative;
+  .login section input[type=text],
+.login section input[type=password] {
     width: 250px;
-    text-align: right;
-    font-size: 14px;
-    margin: 0px 0px 10px 0px;
-    gap: 10px;
-    cursor: pointer;
-    user-select: none;
+    height: 40px;
   }
-  #login button {
-    width: 150px;
-    height: 50px;
-    outline: none;
-    margin: 60px 0px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 1px solid #3f4042;
-    border-radius: 5px;
-    box-shadow: 0px 2px 2px #00000050;
-    background-color: #292a2d;
-    color: #ffffff;
-    transition: 0.1s border;
-    cursor: pointer;
+  .login section button {
+    width: 250px;
+    height: 40px;
+    margin: 30px 0px 20px 0px;
   }
-  #login button:hover {
-    border: 2px solid #ffffffc9;
-  }
-  #login button:active {
-    background: #ffffff;
-    color: #000000;
-  }
-  #login p {
+  .login p {
     margin: 30px auto 50px auto;
     font-size: 12px;
   }
-  #login p a {
+  .login p a {
     text-decoration: none;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
-  }
-}
-
-#signup {
-  display: none;
-  width: 450px;
-  height: 850px;
-  background-color: #850f0f;
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-}
-
-.animation {
-  animation: 0.8s switchScreen;
-}
-
-@keyframes switchScreen {
-  0% {
-    width: 950px;
-    height: 400px;
-  }
-  100% {
-    width: 450px;
-    height: 850px;
   }
 }
 

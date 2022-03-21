@@ -1,23 +1,28 @@
 @use "./color";
 @use "./font";
+@use "./component/checkbox";
+@use "./component/button";
+@use "./component/textbox";
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto";
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 body {
-  background: color.$bodyBg;
+  background-color: color.$background;
   position: relative;
 }
 
-#login {
+.login {
   color: color.$txt;
+  box-shadow: 5px 5px 10px color.$shadow;
   /* display: none; */
 
+  //View Desktop
   @media (min-width: 980px) and (max-width: 2560px) {
     position: absolute;
     top: 50vh;
@@ -28,7 +33,6 @@ body {
     width: 950px;
     height: 400px;
     background: color.$mainBg;
-    box-shadow: 3px 3px 10px color.$shadow;
     border-radius: 5px;
     transform: translate(-50%, -50%);
 
@@ -53,24 +57,12 @@ body {
         user-select: none;
       }
 
-      .txtUser,
-      .txtPassword {
-        outline: none;
-        margin: 10px 0px;
-        height: 30px;
-        width: 200px;
-        padding: 2px 7px;
-        border-radius: 5px;
-        background: color.$bgInput;
-        border: 1px solid color.$border;
-        color: color.$txt;
-        transition: 0.1s outline;
-        font-family: Arial;
-        transition: 0.1s;
+      button {
+        margin: 30px;
+      }
 
-        &:focus {
-          outline: 2px solid color.$outline;
-        }
+      .lblCheckbox {
+        padding-right: 50px;
       }
 
       //Classes de manipulação
@@ -88,11 +80,7 @@ body {
       .containerPassword {
         position: relative;
 
-        #chkShowPassword {
-          display: none;
-        }
-
-        #lblPassword {
+        .icon {
           position: absolute;
           top: 50%;
           right: 5px;
@@ -146,31 +134,6 @@ body {
         }
       }
 
-      button {
-        width: 200px;
-        height: 30px;
-        outline: none;
-        margin: 20px 0px;
-        text-transform: uppercase;
-        border: 1px solid color.$border;
-        border-radius: 5px;
-        box-shadow: 0px 2px 2px color.$shadow;
-        background-color: color.$bgButton;
-        color: color.$txt;
-        transition: 0.1s border;
-
-        cursor: pointer;
-
-        &:hover {
-          border: 2px solid color.$outline;
-        }
-
-        &:active {
-          background: color.$txt;
-          color: color.$txtBlack;
-        }
-      }
-
       p {
         margin: auto 0px;
         font-size: 12px;
@@ -183,16 +146,15 @@ body {
     }
   } /* End of Desktop View */
 
+  //View Mobile
   @media (max-width: 979px) {
     width: 95%;
     background: color.$mainBg;
-    box-shadow: 3px 3px 10px color.$shadow;
     border-radius: 5px;
     margin: 25px auto;
 
     aside {
       height: 150px;
-      background: yellow;
       overflow: hidden;
       position: relative;
       border-radius: 5px 5px 0 0;
@@ -214,37 +176,10 @@ body {
         user-select: none;
       }
 
-      .txtUser,
-      .txtPassword {
-        outline: none;
-        margin: 10px 0px;
-        height: 40px;
-        width: 250px;
-        padding: 2px 7px;
-        border-radius: 5px;
-        background: color.$bgInput;
-        border: 1px solid color.$border;
-        color: color.$txt;
-        transition: 0.1s outline;
-        font-family: Arial;
-
-        &:focus {
-          outline: 2px solid color.$outline;
-        }
-      }
-
-      #showPassword {
-        display: none;
-      }
-
       .containerPassword {
         position: relative;
 
-        #chkShowPassword {
-          display: none;
-        }
-
-        #lblPassword {
+        .icon {
           position: absolute;
           top: 50%;
           right: 5px;
@@ -269,41 +204,16 @@ body {
         }
       }
 
-      .containerRememberMe {
-        position: relative;
+      input[type="text"],
+      input[type="password"] {
         width: 250px;
-        text-align: right;
-        font-size: 14px;
-        margin: 0px 0px 10px 0px;
-        gap: 10px;
-        cursor: pointer;
-        user-select: none;
-      }
-    }
-
-    button {
-      width: 150px;
-      height: 50px;
-      outline: none;
-      margin: 60px 0px;
-      text-transform: uppercase;
-      font-weight: bold;
-      border: 1px solid color.$border;
-      border-radius: 5px;
-      box-shadow: 0px 2px 2px color.$shadow;
-      background-color: color.$bgButton;
-      color: color.$txt;
-      transition: 0.1s border;
-
-      cursor: pointer;
-
-      &:hover {
-        border: 2px solid color.$outline;
+        height: 40px;
       }
 
-      &:active {
-        background: color.$txt;
-        color: color.$txtBlack;
+      button {
+        width: 250px;
+        height: 40px;
+        margin: 30px 0px 20px 0px;
       }
     }
 
@@ -317,33 +227,4 @@ body {
       }
     }
   } /* End of Mobile View */
-}
-
-#signup {
-  display: none;
-  width: 450px;
-  height: 850px;
-  background-color: #850f0f;
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-}
-
-.animation {
-  animation: 0.8s switchScreen;
-}
-
-@keyframes switchScreen {
-  0% {
-    //from --- 0%
-    width: 950px;
-    height: 400px;
-  }
-
-  100% {
-    //to --- 100%
-    width: 450px;
-    height: 850px;
-  }
 }

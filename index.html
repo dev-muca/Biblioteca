@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <main id="login">
+  <main class="login">
     <aside>
       <img src="./assets/img/login/background/background2.jpeg"
         alt="Uma imagem em escala de cinza, apresentando uma prateleira de biblioteca repleta de livros.">
@@ -21,26 +21,35 @@
       <h1>Biblioteca</h1>
       <input type="text" class="txtUser normal" name="txtUser" id="txtUser" placeholder="Usuário" autocomplete="off"
         required>
+
       <div class="containerPassword">
         <input type="password" class="txtPassword" name="txtPassword" id="txtPassword" placeholder="Senha"
           autocomplete="off" required>
-        <input type="checkbox" id="chkShowPassword">
-        <label for="showPassword" id="lblPassword">
+
+        <label class="icon">
           <i id="show" class="fa-solid far fa-eye-slash"></i>
         </label>
       </div>
-      <div class="containerRememberMe">
+
+      <!-- <div class="containerRememberMe">
         <input type="checkbox" id="chkRememberMe">
         <label id="lblRememberMe" for="chkRememberMe">lembre de mim</label>
-      </div>
+      </div> -->
+
+      <label class="lblCheckbox">
+        <input type="checkbox" id="checkbox">
+        <div class="newCheckbox"></div>
+        <div class="textCheckbox">lembrar de mim</div>
+      </label>
+
       <button id="btnLogin">Acessar</button>
+
       <p>
         Não possuí uma conta ainda?
         <a href="#">Cadastre-se aqui!</a>
       </p>
+
     </section>
-  </main>
-  <main id="signup" class="animation">
   </main>
 </body>
 

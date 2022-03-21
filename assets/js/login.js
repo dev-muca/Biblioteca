@@ -1,29 +1,32 @@
-const elements = {
-  user: document.querySelector("#txtUser"),
-  pass: document.querySelector("#txtPassword"),
-  btnShowPassword: document.querySelector("#lblPassword"),
-  chkRemember: document.querySelector("#chkRememberMe"),
-  btnAccess: document.querySelector("#btnLogin"),
-};
+const user = document.querySelector("#txtUser");
+const pass = document.querySelector("#txtPassword");
+const btnShowPassword = document.querySelector(".icon");
+const chkRemember = document.querySelector("#checkbox");
+const btnAccess = document.querySelector("#btnLogin");
+const iframe = document.querySelector("#show");
 
-elements.btnShowPassword.addEventListener("click", () => {
-  if (elements.pass.type === "password") {
-    elements.pass.type = "text";
-    elements.btnShowPassword.innerHTML = `<i id="show" class="fa-solid fa-eye">`;
+btnAccess.addEventListener("click", () => {
+  alert(`Clicou em ${btnAccess.id}`);
+});
+
+btnShowPassword.addEventListener("click", () => {
+  if (pass.type === "password") {
+    pass.type = "text";
+    iframe.classList.replace("fa-eye-slash", "fa-eye");
   } else {
-    elements.pass.type = "password";
-    elements.btnShowPassword.innerHTML = `<i id="hidden" class="fa-solid fa-eye-slash"></i>`;
+    pass.type = "password";
+    iframe.classList.replace("fa-eye", "fa-eye-slash");
   }
 });
 
-elements.chkRemember.addEventListener("click", () => {
+chkRemember.addEventListener("click", () => {
   const tempUser = {
-    username: elements.user.value,
-    password: elements.pass.value,
-    remember: elements.chkRemember.value,
+    username: user.value,
+    password: pass.value,
+    remember: chkRemember.value,
   };
 
-  elements.chkRemember.checked
+  chkRemember.checked
     ? localStorage.setItem("tempUser", JSON.stringify(tempUser))
     : localStorage.removeItem("tempUser", JSON.stringify(tempUser));
 });
@@ -31,9 +34,9 @@ elements.chkRemember.addEventListener("click", () => {
 window.addEventListener("load", () => {
   const tempUser = JSON.parse(localStorage.getItem("tempUser"));
   if (tempUser != null) {
-    elements.user.value = tempUser.username;
-    elements.pass.value = tempUser.password;
-    tempUser.remember == "on" ? (elements.chkRemember.checked = true) : (elements.chkRemember.checked = false);
+    user.value = tempUser.username;
+    pass.value = tempUser.password;
+    tempUser.remember == "on" ? (chkRemember.checked = true) : (chkRemember.checked = false);
   }
 });
 
@@ -49,21 +52,3 @@ function loadHome() {
     window.location.assign("/home.html");
   }, 1500);
 }
-
-elements.btnAccess.addEventListener("click", () => {
-  const tempUser = {
-    username: elements.user.value,
-    password: elements.pass.value,
-  };
-
-  if ((tempUser.username === "user") & (tempUser.password === "1234")) {
-    console.warn("Acessou!");
-    loadHome();
-  } else {
-    if (tempUser.username !== "user") {
-      error(elements.user);
-    } else {
-      error(elements.pass);
-    }
-  }
-});
