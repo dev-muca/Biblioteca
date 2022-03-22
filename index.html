@@ -40,14 +40,32 @@
         <div class="textCheckbox">lembrar de mim</div>
       </label>
 
-      <button id="btnLogin" class="access" tabindex="3">Acessar</button>
+      <button id="btnLogin" class="btnDesktop button" tabindex="3">Acessar</button>
 
-      <p>
-        Não possuí uma conta ainda?
-        <a href="#" tabindex="4">Cadastre-se aqui!</a>
+      <p class="forgotPassword">
+        <a href="#" tabindex="4">Esqueci minha senha</a>
       </p>
 
+      <p class="signUp">
+        Não possuí uma conta ainda?
+        <a href="#" tabindex="5">Cadastre-se aqui!</a>
+      </p>
     </section>
+
+    <section class="forgotPasswordOverlay hideOverlay">
+      <section>
+        <p>
+          Esqueceu sua senha? Não há problemas, basta informar seu email para recupera-lá!
+        </p>
+
+        <label>
+          Digite seu e-mail:
+          <input type="email" id="email">
+        </label>
+
+        <button id="sendEmail" class="button">Enviar</button>
+      </section>
+
   </main>
 </body>
 

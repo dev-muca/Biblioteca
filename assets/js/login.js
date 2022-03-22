@@ -4,6 +4,7 @@ const btnShowPassword = document.querySelector(".icon");
 const chkRemember = document.querySelector("#checkbox");
 const btnAccess = document.querySelector("#btnLogin");
 const iframe = document.querySelector("#show");
+const btnForgotPassword = document.querySelector(".forgotPassword");
 
 btnAccess.addEventListener("click", () => {
   alert(`Clicou em ${btnAccess.id}`);
@@ -18,6 +19,24 @@ btnShowPassword.addEventListener("click", () => {
     iframe.classList.replace("fa-eye", "fa-eye-slash");
   }
 });
+
+btnForgotPassword.addEventListener("click", () => {
+  const overlay = document.querySelector(".forgotPasswordOverlay");
+  overlay.style.display = "block";
+
+  setTimeout(() => {
+    document.addEventListener("click", clickOutside);
+  }, 250);
+});
+
+const clickOutside = (event) => {
+  const overlay = document.querySelector(".forgotPasswordOverlay");
+
+  if (!overlay.contains(event.target)) {
+    overlay.style.display = "none";
+    document.removeEventListener("click", clickOutside);
+  }
+};
 
 chkRemember.addEventListener("click", () => {
   const tempUser = {
