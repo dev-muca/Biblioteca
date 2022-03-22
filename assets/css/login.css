@@ -367,47 +367,47 @@ body {
   .login .signUp a:hover {
     text-shadow: 0px 0px 5px #ffffff;
   }
-}
-.login .forgotPasswordOverlay {
-  display: none;
-  width: 380px;
-  height: 400px;
-  border: 1px solid #3f4042;
-  border-radius: 5px;
-  background: #2c2d31;
-  box-shadow: 3px 3px 5px #00000050;
-  position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.login .forgotPasswordOverlay section {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.login .forgotPasswordOverlay section p {
-  font-size: 20px;
-  text-align: justify;
-  width: 320px;
-  position: absolute;
-  top: 30px;
-  left: 26px;
-}
-.login .forgotPasswordOverlay section label {
-  position: absolute;
-  top: 190px;
-  left: 30px;
-}
-.login .forgotPasswordOverlay section label #email {
-  width: 320px;
-}
-.login .forgotPasswordOverlay section #sendEmail {
-  height: 50px;
-  width: 320px;
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
+  .login .forgotPasswordOverlay {
+    display: none;
+    width: 380px;
+    height: 400px;
+    border: 1px solid #3f4042;
+    border-radius: 5px;
+    background: #2c2d31;
+    box-shadow: 3px 3px 5px #00000050;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .login .forgotPasswordOverlay section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .login .forgotPasswordOverlay section p {
+    font-size: 20px;
+    text-align: justify;
+    width: 320px;
+    position: absolute;
+    top: 30px;
+    left: 26px;
+  }
+  .login .forgotPasswordOverlay section label {
+    position: absolute;
+    top: 190px;
+    left: 30px;
+  }
+  .login .forgotPasswordOverlay section label #email {
+    width: 320px;
+  }
+  .login .forgotPasswordOverlay section #sendEmail {
+    height: 50px;
+    width: 320px;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+  }
 }
 
 /*# sourceMappingURL=login.css.map */
