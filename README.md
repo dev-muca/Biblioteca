@@ -11,7 +11,7 @@
 O projeto está ainda em fase de desenvolvimento, e estou caminhando para desenvolver as seguintes features:
 
 - [x] Páginas responsivas c/ SASS
-- [ ] Biblioteca de Componentes c/ SASS (CSS)
+- [x] Biblioteca de Componentes c/ SASS (CSS)
 - [ ] CRUD (Users, E-Books, Revistas, etc)
 - [ ] Interface Intuitiva para os usuários
 - [ ] API para comunicação da plataforma
