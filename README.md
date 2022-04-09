@@ -34,6 +34,6 @@ O projeto está ainda em fase de desenvolvimento, e estou caminhando para desenv
 
 ## 😄 Obrigado pela presença<br>
 
-Muito obrigado por reservar um pouco do seu precioso tempo averiguando este projeto, pra você pode não ser muito, mas para mim é um enomre passo na minha carreira ❤
+Muito obrigado por reservar um pouco do seu precioso tempo averiguando este projeto, pra você pode não ser muito, mas para mim é um enorme passo na minha carreira ❤
 
 [⬆ Voltar ao topo](#Biblioteca)<br>
