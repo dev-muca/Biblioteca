@@ -8,7 +8,7 @@
 
 ### Desenvolvimento
 
-O projeto está ainda em fase de desenvolvimento, e estou caminhando para desenvolver as seguintes features:
+O projeto está ainda em fase de desenvolvimento, e estou caminhando para desenvolver varias features. São elas:
 
 - [x] Páginas responsivas c/ SASS
 - [x] Biblioteca de Componentes c/ SASS (CSS)
